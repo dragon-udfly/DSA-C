@@ -53,6 +53,12 @@ int Peek(Stack *s) {
     }
 }
 
+void PrintStack(Stack *s) {
+   for(int i = 0; i <= s->top; i++) {
+    printf("%d ", s->items[i]);
+   }
+}
+
 int main() {
 
     Stack number_stack = {0};
@@ -72,10 +78,11 @@ int main() {
     Push(&number_stack, 400);
     printf("Peek: %d\n", Peek(&number_stack));
 
-    printf("Numbers: ");
-    while(Pop(&number_stack) != EXIT) {
-        printf("%d ", Pop(&number_stack));
-    }
+    printf("Take Element: %d\n", Pop(&number_stack));
+    printf("Peek: %d\n", Peek(&number_stack));
+
+    printf("Stack: ");
+    PrintStack(&number_stack);
     printf("\n");
 
     return 0;
